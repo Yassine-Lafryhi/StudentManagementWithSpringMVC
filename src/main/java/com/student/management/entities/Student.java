@@ -33,15 +33,17 @@ public class Student {
 
     @NotEmpty
     @Size(max = 50)
+    @Column(unique = true)
     private String email;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotNull
     @Past
     private Date birthDate;
 
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    private boolean enRegle;
+    private boolean inGoodStanding;
 }
