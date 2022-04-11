@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template">
+<head>
+    <meta charset="UTF-8">
+    <title>Unauthorized access</title>
+
+</head>
+<body>
+<div layout:fragment="content" class="my-4">
+    <div class="container h-100 py-5">
+        <div class="card border border-secondary">
+            <div class="card-header text-center">
+                <h3 class="h3 mt-3 mb-4 mx-auto display-6 fw-light ">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Unauthorized access
+                </h3>
+            </div>
+            <div class="card-body py-1">
+                <div class="alert alert-danger py-5" role="alert">
+                    <h1 class="h1 text-center display-3 my-2">
+                        <i class="fa-solid fa-skull-crossbones"></i>
+                        <i class="fa-solid fa-radiation"></i>
+                    </h1>
+                    <h3 class="h3 display-6 mt-2 text-center ">
+                        You do not have the rights to access this page !
+                    </h3>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
