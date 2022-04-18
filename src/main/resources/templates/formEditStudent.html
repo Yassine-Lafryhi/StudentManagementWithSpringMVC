@@ -17,7 +17,7 @@
 <body>
 <div layout:fragment="content" class="my-4">
     <div class="container h-100 py-5">
-        <div class="card border border-secondary">
+        <div class="card">
             <div class="card-header text-center">
                 <h3 class="h3 mt-3 mb-4 mx-auto display-6 fw-light ">
                     Edit an existing student
@@ -26,13 +26,10 @@
             <form th:action="@{put(page=${page},keyword=${keyword},size=${size})}" method="post">
                 <input type="hidden" name="id" th:value="${student.getId()}">
                 <div class="card-body py-4">
-
                     <div class="col-8 col-md-6 mx-auto">
-
                         <div class="mb-3">
                             <label for="id" class="form-label fw-bold">Student Id : </label>
-                            <input type="text" readonly class="form-control text-center" id="id"
-                                   th:value="${student.getId()}">
+                            <input type="text" readonly class="form-control text-center" id="id" th:value="${student.getId()}">
                         </div>
 
                         <div class="mb-3">
@@ -72,7 +69,6 @@
                             </label>
                             <small class="text-danger" th:errors="${student.inGoodStanding}"></small>
                         </div>
-
 
                         <div class="mb-3">
                             <label class="form-label fw-bold">Gender : </label>

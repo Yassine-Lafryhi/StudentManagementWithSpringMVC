@@ -18,7 +18,7 @@
 <body>
 <div layout:fragment="content" class="my-4">
     <div class="container h-100 py-5">
-        <div class="card border border-secondary">
+        <div class="card">
             <div class="card-header text-center">
                 <h3 class="h3 mt-3 mb-4 mx-auto display-6 fw-light ">
                     <i class="fa-solid fa-home"></i>
@@ -26,14 +26,14 @@
                 </h3>
             </div>
             <div class="card-body py-4">
-
+                <h4 sec:authorize="!isAuthenticated()" style="text-align:center;">Please log in to continue !</h4>
+                <h4 sec:authorize="isAuthenticated()" style="text-align:center;">Please choose a menu to start !</h4>
             </div>
             <div class="card-footer">
-
+                <h6 style="text-align:center;">All rights are reserved 2022</h6>
             </div>
         </div>
     </div>
-
 </div>
 </body>
 </html>

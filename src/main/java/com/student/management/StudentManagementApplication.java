@@ -16,16 +16,22 @@ public class StudentManagementApplication {
     @Bean
     CommandLineRunner saveUsers(SecurityService securityService) {
         return args -> {
+            securityService.saveNewUser("yassine", "12345", "12345");
+            securityService.saveNewUser("admin", "12345", "12345");
             securityService.saveNewUser("omar", "12345", "12345");
             securityService.saveNewUser("hafsa", "12345", "12345");
             securityService.saveNewUser("haitham", "12345", "12345");
+            securityService.saveNewUser("user", "12345", "12345");
 
             securityService.saveNewRole("USER", "user");
             securityService.saveNewRole("ADMIN", "admin");
 
             securityService.addRoleToUser("omar", "ADMIN");
+            securityService.addRoleToUser("yassine", "ADMIN");
+            securityService.addRoleToUser("admin", "ADMIN");
             securityService.addRoleToUser("hafsa", "USER");
             securityService.addRoleToUser("haitham", "USER");
+            securityService.addRoleToUser("user", "USER");
         };
     }
 
