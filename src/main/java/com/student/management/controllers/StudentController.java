@@ -53,7 +53,7 @@ public class StudentController {
         model.addAttribute("size", size);
         model.addAttribute("keyword", keyword);
         model.addAttribute("maxPages", list.getTotalPages());
-        return "students";
+        return "students-list";
     }
 
     @DeleteMapping(path = "/delete")
@@ -73,7 +73,7 @@ public class StudentController {
     @GetMapping(path = "/new")
     public String newStudent(Model model) {
         model.addAttribute("student", new Student());
-        return "formStudent";
+        return "add-student";
     }
 
     @PostMapping(path = "/save")
@@ -93,7 +93,7 @@ public class StudentController {
                       @RequestParam(defaultValue = "0") int page,
                       @RequestParam(defaultValue = "5") int size) {
         if (bindingResult.hasErrors())
-            return "formEditStudent";
+            return "edit-student";
         studentRepository.save(student);
         return "redirect:/students?page=" + page + "&keyword=" + keyword + "&size=" + size;
     }
@@ -107,6 +107,6 @@ public class StudentController {
         model.addAttribute("size", size);
         model.addAttribute("page", page);
         model.addAttribute("keyword", keyword);
-        return "formEditStudent";
+        return "edit-student";
     }
 }
